@@ -1,17 +1,16 @@
-/* Global reset and basic styles */
-* {
+/* index.css or global styles */
+
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden; /* prevents horizontal scroll site-wide */
+  font-family: Arial, sans-serif;
 }
 
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }

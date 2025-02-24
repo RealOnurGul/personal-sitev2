@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AboutMeSection from './AboutMeSection';
 import Section from './Section';
 import ExperienceSection from './ExperienceSection';
 import './Home.css';
 
-/* Import images for hero and stripes */
+// Images
 import profilePic from '../assets/profile.png';
 import educationImage from '../assets/education.png';
 import technicalImage from '../assets/technical.png';
 import extracurricularsImage from '../assets/extracurriculars.png';
 
-/* Skill logos for Technical Skills */
+// Skills
 import pythonLogo from '../assets/skills/python.png';
 import javaLogo from '../assets/skills/java.png';
 import reactLogo from '../assets/skills/react.png';
@@ -21,6 +21,9 @@ import pytorchLogo from '../assets/skills/pytorch.png';
 import sassLogo from '../assets/skills/sass.png';
 import rstudioLogo from '../assets/skills/rstudio.png';
 import cLogo from '../assets/skills/c.png';
+
+// Icons for bottom contact
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
 
 const techSkills = [
   { name: 'Python', logo: pythonLogo },
@@ -36,9 +39,19 @@ const techSkills = [
 ];
 
 const Home = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('onur@onurgul.ca');
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  };
+
   return (
     <div className="home-page">
-      {/* Hero / Intro Section with fade-in animation */}
+      {/* Hero Section */}
       <div className="hero-banner">
         <div className="hero-left">
           <h1 className="hero-title">ONUR GUL</h1>
@@ -46,44 +59,56 @@ const Home = () => {
           <h2 className="hero-subtitle">VARSITY SWIMMER</h2>
           <h2 className="hero-subtitle">SOFTWARE ENGINEER</h2>
         </div>
-        <div className="hero-right">
+        {/* Separate container for the photo */}
+        <div className="hero-photo-container">
           <img src={profilePic} alt="Profile" className="hero-profile-pic" />
         </div>
       </div>
 
-      {/* About Me Section with additional filler text */}
-      <AboutMeSection>
-        <p>
-          I am a passionate software engineer currently in my third year at McGill University.
-          I challenge myself by exploring new technologies and tackling complex projects.
-          I recently presented innovative solutions at National Bank, and I strive to push the limits
-          of my knowledge every day.
-        </p>
-      </AboutMeSection>
+      {/* About Me Section */}
+      <AboutMeSection />
 
       {/* Experience Section */}
       <ExperienceSection />
 
-      {/* Subheading */}
+      {/* "More About Me!" Subheading */}
       <h2 className="section-intro">More About Me!</h2>
 
-      {/* Education Section with filler text */}
+      {/* Education Stripe */}
       <Section
         title="Education"
-        description={`I graduated from a top program where I honed my analytical and technical skills.
-        My academic journey has equipped me with the discipline and knowledge to tackle real-world problems.`}
+        description={(
+          <>
+            <p>
+              Currently pursuing a Bachelor of Science in Mathematics and Computer Science at McGill University,
+              expected to graduate in spring 2026.
+            </p>
+            <br />
+            <p>
+              My coursework spans Machine Learning, Quantitative Risk Management, Probability, Statistics, Calculus, Abstract Algebra, Data Structures, Algorithms and more.
+            </p>
+          </>
+        )}
         imageUrl={educationImage}
         bgColor="#ffffff"
       />
 
-      {/* Technical Skills Section with updated filler text */}
+      {/* Technical Skills Stripe */}
       <Section
         title="Technical Skills"
         description={(
           <>
             <p>
-              As a third-year student at McGill University, I continuously learn and refine my skills.
-              I recently presented at National Bank, demonstrating my expertise in modern web technologies.
+              I’m currently in my third year at McGill University, studying Mathematics and Computer Science, constantly learning new
+              languages and frameworks by tackling various projects.
+            </p>
+            <br />
+            <p>
+              As a co-founder of the McGill Quantitative Research Club, I am currently leading our algorithmic trading sector, working on developing a predictor for currency futures.
+            </p>
+            <br />
+            <p>
+              I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
             </p>
             <div className="tech-icons-row">
               {techSkills.map((skill) => (
@@ -100,14 +125,78 @@ const Home = () => {
         reverse
       />
 
-      {/* Extracurriculars Section with filler text */}
+      {/* Extracurriculars Stripe */}
       <Section
         title="Extracurriculars"
-        description={`Beyond academics, I actively engage in extracurricular activities that foster leadership and creativity.
-        Whether it's organizing tech workshops or participating in competitive sports, I embrace challenges with enthusiasm.`}
+        description={(
+          <>
+            <p>
+              I've been swimming competitively for over 13 years and am currently on the McGill Varsity Swim Team.
+              I have competed at high-level international competitions, and have qualified for Olympic Swimming Trials.
+            </p>
+            <br />
+            <p>
+              Outside of swimming, I enjoy surfing, golf, tennis, chess and much more!
+            </p>
+          </>
+        )}
         imageUrl={extracurricularsImage}
         bgColor="#ffffff"
       />
+
+      {/* Contact Section at the bottom */}
+      <div className="home-contact-section">
+        <h2>Get in Touch</h2>
+        <p>I’d love to hear your thoughts!</p>
+
+        <div className="contact-details">
+          <div className="contact-item">
+            <FaMapMarkerAlt className="contact-icon" />
+            <span>Vancouver BC, Canada</span>
+          </div>
+          <div
+            className="contact-item email-item"
+            onClick={handleCopyEmail}
+          >
+            <FaEnvelope className="contact-icon" />
+            <span className="clickable-email">onur@onurgul.ca</span>
+          </div>
+          <div className="contact-item">
+            <FaPhoneAlt className="contact-icon" />
+            <span>604-562-2408</span>
+          </div>
+          <p className={`clipboard-msg ${copied ? 'show' : ''}`}>
+            Copied to clipboard!
+          </p>
+        </div>
+
+        <div className="contact-socials">
+          <a
+            href="https://www.linkedin.com/in/onurgul1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link linkedin-link"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/RealOnurGul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link github-link"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.youtube.com/@realonurgul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link youtube-link"
+          >
+            <FaYoutube />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

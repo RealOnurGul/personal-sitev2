@@ -162,11 +162,11 @@
     color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
   }
   
   .footer-icon-circle:hover {
-    background-color: #001f4d;
+    transform: scale(1.1);
   }
   
   .linkedin-circle {

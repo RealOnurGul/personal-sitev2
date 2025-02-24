@@ -64,13 +64,12 @@ const AboutMeSection = () => {
       <div className="right-side">
         <h2>About Me</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Nulla vehicula velit id lacus viverra, eget faucibus nulla 
-          fermentum. In sed nisl enim. Proin a felis ac lectus posuere 
-          ullamcorper. Fusce placerat dignissim leo, at porttitor tellus 
-          tincidunt eu.
-
-          Test here :)
+        Hello! I'm Onur Gul, a third year Mathematics and Computer Science student at McGill University, passionate about software engineering, machine learning, and 
+        competitive swimming. My journey includes internships, leadership roles, and active contributions to web development and data science projects. 
+        </p>
+        <br></br>
+        <p>
+        Welcome to my digital space!
         </p>
       </div>
     </div>

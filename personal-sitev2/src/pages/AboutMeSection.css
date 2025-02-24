@@ -9,7 +9,7 @@
   .left-side {
     position: relative;
     flex: 1;
-    overflow: hidden; /* ensures the overlay doesn't exceed boundaries */
+    overflow: hidden;
   }
   
   .background-image {
@@ -19,7 +19,6 @@
     display: block;
   }
   
-  /* The color overlay that starts opaque and becomes transparent */
   .color-overlay {
     position: absolute;
     top: 0;
@@ -27,8 +26,8 @@
     right: 0;
     bottom: 0;
     background-color: #f2f2f2;
-    pointer-events: none; /* so clicks go through */
-    transition: opacity 0.2s linear; /* fade out smoothly */
+    pointer-events: none;
+    transition: opacity 0.2s linear;
   }
   
   /* Right side: about me text box */
@@ -51,5 +50,24 @@
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
+  }
+  
+  /* Mobile: stack image & text vertically */
+  @media (max-width: 768px) {
+    .about-me-section {
+      flex-direction: column;
+      min-height: auto;
+    }
+  
+    .left-side,
+    .right-side {
+      width: 100%;
+      flex: none;
+      height: auto;
+    }
+  
+    .right-side {
+      padding: 20px;
+    }
   }
   

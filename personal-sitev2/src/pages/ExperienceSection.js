@@ -14,18 +14,18 @@ const ExperienceSection = () => {
   // Four items now, with RentYVR last so it appears on the right in a row of four
   const experiences = [
     {
-      shortTitle: 'Incoming SWE @ Shopify',
+      shortTitle: 'Incoming SWE Intern @ Shopify',
       image: shopifyImage,
       dateRange: 'May 2025 - August 2025',
-      skills: ['Vue.js', 'TypeScript', 'Node.js', 'Stripe API', 'Firebase', 'UI/UX'],
+      skills: ['Coming Soon ;)'],
       details: {
-        title: 'Incoming Software Engineer at Shopify',
+        title: 'Incoming Software Engineer Intern at Shopify',
         website: 'https://www.shopify.com',
         linkedin: 'https://www.linkedin.com/company/shopify/',
         description: [
-          'Position: Incoming Software Engineer (Full-time)',
-          'Start Date: TBD',
-          'Description: A short summary about the upcoming role at Shopify.'
+          'Incoming Software Engineer Intern',
+          'May 5th 2025 - August 22nd 2025',
+          'More info coming soon :)'
         ]
       }
     },
