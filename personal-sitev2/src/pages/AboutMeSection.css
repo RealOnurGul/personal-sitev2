@@ -1,0 +1,55 @@
+.about-me-section {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+  }
+  
+  /* Left side: photo + overlay */
+  .left-side {
+    position: relative;
+    flex: 1;
+    overflow: hidden; /* ensures the overlay doesn't exceed boundaries */
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* The color overlay that starts opaque and becomes transparent */
+  .color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+    pointer-events: none; /* so clicks go through */
+    transition: opacity 0.2s linear; /* fade out smoothly */
+  }
+  
+  /* Right side: about me text box */
+  .right-side {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-side h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .right-side p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  

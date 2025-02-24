@@ -1,0 +1,97 @@
+/* File: src/pages/Contact.css */
+
+.contact-page {
+  position: fixed;
+  top: 0;
+  right: -35%;
+  width: 35%;
+  height: 100vh;
+  background-color: #C1BFAF;
+  color: #000;
+  transition: right 0.5s ease;
+  z-index: 1000;
+}
+
+.contact-page.open {
+  right: 0;
+}
+
+.contact-panel {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #C1BFAF;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  color: #000;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+  resize: vertical;
+  overflow: hidden;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+/* Mobile styling: full width on mobile */
+@media (max-width: 768px) {
+  .contact-page {
+    width: 100%;
+    right: -100%;
+  }
+  .contact-page.open {
+    right: 0;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
