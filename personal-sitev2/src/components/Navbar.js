@@ -55,15 +55,6 @@ const Navbar = () => {
           Projects
         </Link>
         <a
-          href="https://buymeacoffee.com/onurgul"
-          className="navbar-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={closeMobileMenu}
-        >
-          Buy Me A Coffee
-        </a>
-        <a
           href="https://www.linkedin.com/in/onurgul1/"
           className="navbar-link navbar-icon-link"
           target="_blank"
@@ -111,15 +102,6 @@ const Navbar = () => {
         <Link to="/projects" className="navbar-link" onClick={closeMobileMenu}>
           Projects
         </Link>
-        <a
-          href="https://buymeacoffee.com/onurgul"
-          className="navbar-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={closeMobileMenu}
-        >
-          Buy Me A Coffee
-        </a>
         <a
           href="https://www.linkedin.com/in/onurgul1/"
           className="navbar-link navbar-icon-link"

@@ -3,29 +3,52 @@ import './ExperienceSection.css';
 import { FaLinkedin, FaGlobe } from 'react-icons/fa';
 
 /* Images for the card previews */
-import hypekraftImage from '../assets/hypekraft.jpg';
+import hypekraftImage from '../assets/hypekraft.png';
 import shopifyImage from '../assets/shopify.png';
-import rentyvrImage from '../assets/rentYVR.jpeg'; // New RentYVR photo
+import rentyvrImage from '../assets/rentYVR.jpeg';
+import nbcImage from '../assets/nbc.png';
 
 const ExperienceSection = () => {
   const [selectedExp, setSelectedExp] = useState(null);
   const [showDrawer, setShowDrawer] = useState(false);
 
-  // Four items now, with RentYVR last so it appears on the right in a row of four
+  // Five items now, with RentYVR last
   const experiences = [
     {
-      shortTitle: 'Incoming SWE Intern @ Shopify',
+      shortTitle: 'Quant Dev Intern @ National Bank',
+      image: nbcImage,
+      dateRange: 'September 2025 - Present',
+      skills: ['Python', 'SEC EDGAR', 'Machine Learning', 'Algorithmic Trading'],
+      details: {
+        title: 'National Bank of Canada (Quantitative Developer Intern)',
+        website: 'https://www.nbc.ca',
+        linkedin: 'https://www.linkedin.com/company/national-bank-of-canada/',
+        description: [
+          'Montreal QC, Canada',
+          'Quantitative Developer Intern - ETF & Electronic Trading Team: Algorithmic Trading',
+          'September 2025 - Present',
+          '● Developed an automated pipeline leveraging SEC EDGAR filings to extract and summarize key info for financial forms.',
+          '● Built a regression-driven ranking algorithm that scores filings by estimated market impact, highlighting those most likely to present bullish or bearish signals.'
+        ]
+      }
+    },
+    {
+      shortTitle: 'SWE Intern @ Shopify',
       image: shopifyImage,
       dateRange: 'May 2025 - August 2025',
-      skills: ['Coming Soon ;)'],
+      skills: ['Python', 'Google Gemini API', 'Ruby', 'Data Dashboards'],
       details: {
-        title: 'Incoming Software Engineer Intern at Shopify',
+        title: 'Shopify (Software Engineering Intern)',
         website: 'https://www.shopify.com',
         linkedin: 'https://www.linkedin.com/company/shopify/',
         description: [
-          'Incoming Software Engineer Intern',
-          'May 5th 2025 - August 22nd 2025',
-          'More info coming soon :)'
+          'Montreal QC, Canada',
+          'Software Engineering Intern: CX Growth RnD',
+          'May 2025 - August 2025',
+          '● Developed an AI-powered phone assistant for Shopify merchants using Python and the Google Gemini API.',
+          '● Now live and deployed across multiple support lines.',
+          '● Led a data migration of over 30,000 internal documents; leveraged Ruby to create scripts to automate the process.',
+          '● Built numerous internal data dashboards that automatically notify developers when Growth RnD services encounter issues.'
         ]
       }
     },

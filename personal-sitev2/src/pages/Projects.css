@@ -124,6 +124,18 @@
   line-height: 1.4;
 }
 
+.project-description-link {
+  color: #0A66C2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.project-description-link:hover {
+  color: #004182;
+  text-decoration: underline;
+}
+
 .projects-drawer-footer-bar {
   background-color: #f1f1f1;
   border-radius: 0 0 20px 20px;
@@ -158,6 +170,14 @@
 
 .linkedin-circle {
   background-color: #0A66C2;
+}
+
+.demo-circle {
+  background-color: #10B981;
+}
+
+.demo-circle:hover {
+  background-color: #059669;
 }
 
 .projects-drawer-footer-right {
