@@ -12,8 +12,24 @@ const ExperienceSection = () => {
   const [selectedExp, setSelectedExp] = useState(null);
   const [showDrawer, setShowDrawer] = useState(false);
 
-  // Five items now, with RentYVR last
+  // Six items now, with the "Incoming" role featured first
   const experiences = [
+    {
+      shortTitle: 'Incoming SWE Intern (x2) @ Shopify',
+      image: shopifyImage,
+      dateRange: 'Incoming May 2026',
+      skills: ['Shopify', 'Software Engineering', 'Returning Intern'],
+      details: {
+        title: 'Shopify (Incoming Software Engineering Intern, x2)',
+        website: 'https://www.shopify.com',
+        linkedin: 'https://www.linkedin.com/company/shopify/',
+        description: [
+          'Incoming May 2026',
+          'Software Engineering Intern (x2) — Incoming May 2026',
+          '● Returning to Shopify for another internship term.'
+        ]
+      }
+    },
     {
       shortTitle: 'Quant Dev Intern @ National Bank',
       image: nbcImage,
@@ -140,16 +156,18 @@ const ExperienceSection = () => {
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="experience-card"
+            className={`experience-card-wrapper ${index === 0 ? 'featured' : ''}`}
             onClick={() => handleCardClick(exp)}
           >
-            <img
-              src={exp.image}
-              alt={exp.shortTitle}
-              className="experience-card-image"
-            />
-            <div className="experience-card-text">
-              {exp.shortTitle}
+            <div className="experience-card">
+              <img
+                src={exp.image}
+                alt={exp.shortTitle}
+                className="experience-card-image"
+              />
+              <div className="experience-card-text">
+                {exp.shortTitle}
+              </div>
             </div>
           </div>
         ))}

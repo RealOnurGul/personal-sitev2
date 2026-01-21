@@ -17,6 +17,16 @@
     gap: 20px;
   }
   
+  .experience-card-wrapper {
+    display: flex;
+  }
+
+  /* Force the first (featured) card onto its own row */
+  .experience-card-wrapper.featured {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
   .experience-card {
     width: 250px;
     background-color: #fff;
@@ -183,6 +193,10 @@
     .experience-grid {
       flex-direction: column;
       align-items: center;
+    }
+    .experience-card-wrapper {
+      width: 100%;
+      justify-content: center;
     }
     .experience-card {
       width: 90%;
