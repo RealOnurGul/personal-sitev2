@@ -3,6 +3,8 @@ import './Projects.css';
 import { FaGlobe, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 
 /* Placeholder images for the project squares. Replace with your actual logos if you have them. */
+import rideshareImage from '../assets/rideshare.png';
+import dodecordleImage from '../assets/dodecordle.png';
 import mlstocksImage from '../assets/mlstocks.png';
 import mcgillquantImage from '../assets/mcgillquant.png';
 import pharmahacksImage from '../assets/pharmahacks.png';
@@ -15,6 +17,45 @@ const Projects = () => {
   // We'll store each project similarly to how we did experiences
   // "skills" is optional if you want skill bubbles; you can skip it or add them.
   const projects = [
+    {
+      shortTitle: 'StudentRide',
+      image: rideshareImage,
+      dateRange: 'Demo Site',
+      details: {
+        title: 'StudentRide - University Rideshare Platform',
+        website: 'https://rideshare-uni.vercel.app/',
+        liveDemo: 'https://rideshare-uni.vercel.app/',
+        linkedin: 'https://www.linkedin.com',
+        description: [
+          'A ridesharing platform exclusively for Canadian university students to split costs and travel between cities affordably and safely.',
+          'Built a full-stack application with a complete backend infrastructure, featuring Google OAuth authentication and standard user login systems.',
+          'The platform is fully operational with user verification, ride posting, booking, messaging, and profile management. All users must verify their university email to use the platform.',
+          '⚠️ Note: This is currently a demo site. Payments are not yet integrated, but all other features are fully functional.',
+          'Key features include verified student-only access, secure user profiles, ride search and posting, in-app messaging, and a comprehensive dashboard for managing rides.',
+          { type: 'link', text: '🌐 Visit StudentRide', url: 'https://rideshare-uni.vercel.app/' }
+        ]
+      }
+    },
+    {
+      shortTitle: 'Dodecordle',
+      image: dodecordleImage,
+      dateRange: 'Word Puzzle Game',
+      details: {
+        title: 'Dodecordle - Solve 12 Wordles at Once',
+        website: 'https://dodecordle.vercel.app/',
+        liveDemo: 'https://dodecordle.vercel.app/',
+        linkedin: 'https://www.linkedin.com',
+        description: [
+          'The ultimate word puzzle challenge! Solve 12 Wordle puzzles simultaneously with each guess you make.',
+          'Each guess applies to all 12 target words at once. Use color feedback (green, yellow, gray) to eliminate possibilities and narrow down all 12 words simultaneously.',
+          'Game Modes:',
+          '• Daily Game: Play the same puzzle as everyone else worldwide. Each day brings a new challenge with 12 words to solve. You have 14 guesses to complete all 12 words.',
+          '• Practice Mode: Unlimited gameplay with randomly generated puzzles. Perfect for learning strategies and improving your skills.',
+          'Green means the letter is in the correct position, yellow means the letter is in the word but wrong position, and gray means the letter is not in the word at all.',
+          { type: 'link', text: '🎮 Play Dodecordle', url: 'https://dodecordle.vercel.app/' }
+        ]
+      }
+    },
     {
       shortTitle: 'ML Stock Correlation Dashboard',
       image: mlstocksImage,
