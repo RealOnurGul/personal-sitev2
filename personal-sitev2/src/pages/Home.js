@@ -3,6 +3,7 @@ import AboutMeSection from './AboutMeSection';
 import Section from './Section';
 import ExperienceSection from './ExperienceSection';
 import LogoLoop from '../components/LogoLoop';
+import ColorBends from '../components/ColorBends/ColorBends';
 import './Home.css';
 
 // Images
@@ -70,6 +71,20 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <div className="hero-banner">
+        <ColorBends
+          colors={['#ff5c7a', '#8a5cff', '#00ffd1']}
+          rotation={0}
+          speed={0.2}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={1}
+          parallax={0.5}
+          noise={0.1}
+          transparent
+          autoRotate={0}
+        />
+        <div className="hero-content">
         <div className="hero-left">
           <h1 className="hero-title">ONUR GUL</h1>
           <h2 className="hero-subtitle">MCGILL UNIVERSITY</h2>
@@ -79,6 +94,7 @@ const Home = () => {
         {/* Separate container for the photo */}
         <div className="hero-photo-container">
           <img src={profilePic} alt="Profile" className="hero-profile-pic" />
+        </div>
         </div>
       </div>
 
