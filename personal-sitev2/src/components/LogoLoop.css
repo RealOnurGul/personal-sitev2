@@ -1,0 +1,79 @@
+.logo-loop-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 28px 0 16px;
+}
+
+.logo-loop-track {
+  display: flex;
+  width: max-content;
+  animation: logo-loop-scroll var(--speed, 40s) linear infinite;
+}
+
+.logo-loop-wrap.logo-loop--right .logo-loop-track {
+  animation-direction: reverse;
+}
+
+.logo-loop-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-loop-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 32px);
+  padding: 0 var(--gap, 32px);
+}
+
+.logo-loop-item {
+  flex-shrink: 0;
+  height: var(--logo-height, 48px);
+  width: var(--logo-height, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  cursor: default;
+}
+
+.logo-loop-label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: #4a4a4a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1;
+}
+
+.logo-loop-item:hover .logo-loop-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+.logo-loop-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes logo-loop-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

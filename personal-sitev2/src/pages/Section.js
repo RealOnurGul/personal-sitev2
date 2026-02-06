@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Section.css';
 
-const Section = ({ title, description, imageUrl, bgColor, reverse }) => {
+const Section = ({ title, description, imageUrl, bgColor, reverse, className = '' }) => {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -40,7 +40,7 @@ const Section = ({ title, description, imageUrl, bgColor, reverse }) => {
     <section
       className={`section-container ${visible ? 'fade-in' : 'hidden'} ${
         reverse ? 'reverse' : ''
-      }`}
+      } ${className}`.trim()}
       style={{ backgroundColor: bgColor }}
       ref={sectionRef}
     >

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AboutMeSection from './AboutMeSection';
 import Section from './Section';
 import ExperienceSection from './ExperienceSection';
+import LogoLoop from '../components/LogoLoop';
 import './Home.css';
 
 // Images
@@ -21,6 +22,14 @@ import pytorchLogo from '../assets/skills/pytorch.png';
 import sassLogo from '../assets/skills/sass.png';
 import rstudioLogo from '../assets/skills/rstudio.png';
 import cLogo from '../assets/skills/c.png';
+import matlabLogo from '../assets/skills/matlab.png';
+import ocamlLogo from '../assets/skills/ocaml.png';
+import swiftLogo from '../assets/skills/swift.png';
+import assemblyLogo from '../assets/skills/assembly.png';
+import rubyLogo from '../assets/skills/ruby.png';
+import sqlLogo from '../assets/skills/sql.png';
+import cppLogo from '../assets/skills/cpp.png';
+import typescriptLogo from '../assets/skills/typescript.png';
 
 // Icons for bottom contact
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
@@ -35,7 +44,15 @@ const techSkills = [
   { name: 'PyTorch', logo: pytorchLogo },
   { name: 'SASS', logo: sassLogo },
   { name: 'RStudio', logo: rstudioLogo },
-  { name: 'C', logo: cLogo }
+  { name: 'C', logo: cLogo },
+  { name: 'MATLAB', logo: matlabLogo },
+  { name: 'OCaml', logo: ocamlLogo },
+  { name: 'Swift', logo: swiftLogo },
+  { name: 'Assembly', logo: assemblyLogo },
+  { name: 'Ruby', logo: rubyLogo },
+  { name: 'SQL', logo: sqlLogo },
+  { name: 'C++', logo: cppLogo },
+  { name: 'TypeScript', logo: typescriptLogo }
 ];
 
 const Home = () => {
@@ -110,19 +127,21 @@ const Home = () => {
             <p>
               I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
             </p>
-            <div className="tech-icons-row">
-              {techSkills.map((skill) => (
-                <div className="tech-icon" key={skill.name}>
-                  <img src={skill.logo} alt={skill.name} />
-                  <span className="tooltip-text">{skill.name}</span>
-                </div>
-              ))}
-            </div>
           </>
         )}
         imageUrl={technicalImage}
         bgColor="#f7f7f7"
         reverse
+        className="section--shorter"
+      />
+
+      {/* Technical skills conveyor belt */}
+      <LogoLoop
+        logos={techSkills}
+        logoHeight={52}
+        gap={40}
+        speed={38}
+        direction="left"
       />
 
       {/* Extracurriculars Stripe */}
