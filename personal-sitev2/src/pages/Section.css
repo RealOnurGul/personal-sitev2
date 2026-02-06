@@ -70,6 +70,28 @@
     color: #555;
     line-height: 1.6;
   }
+
+  /* On Beams / dark background: no white, white text */
+  .section-container.section--on-beams {
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important;
+  }
+  .section-container.section--on-beams .section-image {
+    background: none;
+  }
+  .section-container.section--on-beams .section-image img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .section-container.section--on-beams .section-content h2 {
+    color: #fff;
+  }
+  .section-container.section--on-beams .section-content p {
+    color: #fff;
+  }
+  .section-container.section--on-beams .section-content a {
+    color: #b2c7f0;
+  }
   
   /* Mobile adjustments */
   @media (max-width: 768px) {

@@ -5,6 +5,8 @@
   transform-origin: bottom right;
   perspective: 900px;
   overflow: visible;
+  z-index: 100;
+  isolation: isolate;
 }
 
 .card {

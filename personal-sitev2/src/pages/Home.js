@@ -6,6 +6,7 @@ import ColorBends from '../components/ColorBends/ColorBends';
 import TiltedCard from '../components/TiltedCard/TiltedCard';
 import CardSwap, { Card } from '../components/CardSwap/CardSwap';
 import FadeContent from '../components/FadeContent';
+import Beams from '../components/Beams/Beams';
 import './Home.css';
 
 // Images
@@ -204,39 +205,50 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technical Skills Stripe */}
-      <Section
-        title="Technical Skills"
-        description={(
-          <>
-            <p>
-              I'm currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
-              languages and frameworks by tackling various projects.
-            </p>
-            <br />
-            <p>
-              As a co-founder of the McGill Quantitative Research Club, I am currently leading our algorithmic trading sector, working on developing a predictor for currency futures.
-            </p>
-            <br />
-            <p>
-              I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
-            </p>
-          </>
-        )}
-        imageUrl={technicalImage}
-        bgColor="#f7f7f7"
-        reverse
-        className="section--shorter"
-      />
+      {/* Technical Skills with Beams background */}
+      <div className="technical-skills-with-beams">
+        <Beams
+          beamWidth={2.5}
+          beamHeight={22}
+          beamNumber={20}
+          lightColor="#b2c7f0"
+          speed={1.3}
+          noiseIntensity={1.3}
+          scale={0.23}
+          rotation={30}
+        />
+        <Section
+          title="Technical Skills"
+          description={(
+            <>
+              <p>
+                I'm currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
+                languages and frameworks by tackling various projects.
+              </p>
+              <br />
+              <p>
+                As a co-founder of the McGill Quantitative Research Club, I am currently leading our algorithmic trading sector, working on developing a predictor for currency futures.
+              </p>
+              <br />
+              <p>
+                I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
+              </p>
+            </>
+          )}
+          imageUrl={technicalImage}
+          bgColor="transparent"
+          className="section--shorter section--on-beams"
+        />
 
-      {/* Technical skills conveyor belt */}
-      <LogoLoop
-        logos={techSkills}
-        logoHeight={52}
-        gap={40}
-        speed={38}
-        direction="left"
-      />
+        {/* Technical skills conveyor belt */}
+        <LogoLoop
+          logos={techSkills}
+          logoHeight={52}
+          gap={40}
+          speed={38}
+          direction="left"
+        />
+      </div>
 
       {/* Contact Section at the bottom */}
       <div className="home-contact-section">
