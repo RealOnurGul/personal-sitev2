@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './PasswordGate.css';
 
 const STORAGE_KEY = 'site_admin_unlocked';
-const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
+// Use env var (set in .env or .env.development.local). Dev fallback so localhost works if env wasn't loaded (restart dev server after adding .env).
+const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD || (process.env.NODE_ENV === 'development' ? 'admin1234' : '');
 
 const PasswordGate = ({ children }) => {
   const [unlocked, setUnlocked] = useState(false);
