@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import GradualBlur from './components/GradualBlur/GradualBlur';
 import './App.css';
 
 function App() {
@@ -21,6 +22,32 @@ function App() {
       </div>
       {/* The site-wide footer at the bottom */}
       <Footer />
+      {/* Constant blur at the bottom of the screen, full width, always visible */}
+      <div
+        className="app-gradual-blur-wrap"
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          width: '100%',
+          height: '9rem',
+          overflow: 'hidden',
+          pointerEvents: 'none',
+          zIndex: 5
+        }}
+      >
+        <GradualBlur
+          target="page"
+          position="bottom"
+          height="9rem"
+          strength={2.5}
+          divCount={64}
+          curve="bezier"
+          exponential
+          opacity={1}
+        />
+      </div>
     </div>
   );
 }
