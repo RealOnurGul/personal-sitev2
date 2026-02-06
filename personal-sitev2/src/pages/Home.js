@@ -112,11 +112,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Me Section */}
-      <AboutMeSection />
-
       {/* Experience Section */}
       <ExperienceSection />
+
+      {/* About Me Section */}
+      <AboutMeSection />
 
       {/* "More About Me!" Subheading */}
       <h2 className="section-intro">More About Me!</h2>
