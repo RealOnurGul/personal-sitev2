@@ -42,7 +42,7 @@ function App() {
           position="bottom"
           height="9rem"
           strength={2.5}
-          divCount={64}
+          divCount={16}
           curve="bezier"
           exponential
           opacity={1}
