@@ -140,13 +140,32 @@ const Home = () => {
         bgColor="#ffffff"
       />
 
+      {/* Extracurriculars Stripe */}
+      <Section
+        title="Extracurriculars"
+        description={(
+          <>
+            <p>
+              I've been swimming competitively for over 13 years and am currently on the McGill Varsity Swim Team.
+              I have competed at high-level international competitions, and have qualified for Olympic Swimming Trials.
+            </p>
+            <br />
+            <p>
+              Outside of swimming, I enjoy surfing, golf, tennis, chess and much more!
+            </p>
+          </>
+        )}
+        imageUrl={extracurricularsImage}
+        bgColor="#ffffff"
+      />
+
       {/* Technical Skills Stripe */}
       <Section
         title="Technical Skills"
         description={(
           <>
             <p>
-              I’m currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
+              I'm currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
               languages and frameworks by tackling various projects.
             </p>
             <br />
@@ -172,25 +191,6 @@ const Home = () => {
         gap={40}
         speed={38}
         direction="left"
-      />
-
-      {/* Extracurriculars Stripe */}
-      <Section
-        title="Extracurriculars"
-        description={(
-          <>
-            <p>
-              I've been swimming competitively for over 13 years and am currently on the McGill Varsity Swim Team.
-              I have competed at high-level international competitions, and have qualified for Olympic Swimming Trials.
-            </p>
-            <br />
-            <p>
-              Outside of swimming, I enjoy surfing, golf, tennis, chess and much more!
-            </p>
-          </>
-        )}
-        imageUrl={extracurricularsImage}
-        bgColor="#ffffff"
       />
 
       {/* Contact Section at the bottom */}
