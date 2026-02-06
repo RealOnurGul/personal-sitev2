@@ -99,7 +99,7 @@ const Home = () => {
         description={(
           <>
             <p>
-              I’m currently in my third year at McGill University, studying Mathematics and Computer Science, constantly learning new
+              I’m currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
               languages and frameworks by tackling various projects.
             </p>
             <br />

@@ -64,7 +64,7 @@ const AboutMeSection = () => {
       <div className="right-side">
         <h2>About Me</h2>
         <p>
-        Hello! I'm Onur Gul, a third year Mathematics and Computer Science student at McGill University, passionate about software engineering, machine learning, and 
+        Hello! I'm Onur Gul, a fourth year Mathematics and Computer Science student at McGill University, passionate about software engineering, machine learning, and 
         competitive swimming. My journey includes internships, leadership roles, and active contributions to web development and data science projects. 
         </p>
         <br></br>
