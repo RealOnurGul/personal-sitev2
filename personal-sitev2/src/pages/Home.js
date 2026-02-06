@@ -4,6 +4,7 @@ import Section from './Section';
 import ExperienceSection from './ExperienceSection';
 import LogoLoop from '../components/LogoLoop';
 import ColorBends from '../components/ColorBends/ColorBends';
+import TiltedCard from '../components/TiltedCard/TiltedCard';
 import './Home.css';
 
 // Images
@@ -93,7 +94,20 @@ const Home = () => {
         </div>
         {/* Separate container for the photo */}
         <div className="hero-photo-container">
-          <img src={profilePic} alt="Profile" className="hero-profile-pic" />
+          <TiltedCard
+            imageSrc={profilePic}
+            altText="Onur Gul"
+            captionText=""
+            containerHeight="300px"
+            containerWidth="300px"
+            imageHeight="300px"
+            imageWidth="300px"
+            rotateAmplitude={12}
+            scaleOnHover={1.1}
+            showMobileWarning={false}
+            showTooltip={false}
+            displayOverlayContent={false}
+          />
         </div>
         </div>
       </div>
