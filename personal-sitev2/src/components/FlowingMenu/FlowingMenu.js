@@ -63,8 +63,6 @@ function MenuItem({
   const [repetitions, setRepetitions] = useState(4);
   const [isHovered, setIsHovered] = useState(false);
 
-  const animationDefaults = { duration: 0.6, ease: 'expo' };
-
   const findClosestEdge = (mouseX, mouseY, width, height) => {
     const topEdgeDist = distMetric(mouseX, mouseY, width / 2, 0);
     const bottomEdgeDist = distMetric(mouseX, mouseY, width / 2, height);
@@ -119,6 +117,7 @@ function MenuItem({
   useEffect(() => {
     if (!marqueeRef.current || !marqueeInnerRef.current) return;
     const edge = lastHoverEdgeRef.current;
+    const animationDefaults = { duration: 0.6, ease: 'expo' };
     if (active) {
       gsap
         .timeline({ defaults: animationDefaults })
