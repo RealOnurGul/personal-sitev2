@@ -31,7 +31,7 @@ function App() {
           left: 0,
           right: 0,
           width: '100%',
-          height: '9rem',
+          height: '4rem',
           overflow: 'hidden',
           pointerEvents: 'none',
           zIndex: 5
@@ -40,9 +40,9 @@ function App() {
         <GradualBlur
           target="page"
           position="bottom"
-          height="9rem"
-          strength={2.5}
-          divCount={16}
+          height="4rem"
+          strength={2}
+          divCount={5}
           curve="bezier"
           exponential
           opacity={1}

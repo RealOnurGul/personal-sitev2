@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import AboutMeSection from './AboutMeSection';
+import React, { useState, useRef } from 'react';
 import Section from './Section';
 import ExperienceSection from './ExperienceSection';
 import LogoLoop from '../components/LogoLoop';
 import ColorBends from '../components/ColorBends/ColorBends';
 import TiltedCard from '../components/TiltedCard/TiltedCard';
+import CardSwap, { Card } from '../components/CardSwap/CardSwap';
+import FadeContent from '../components/FadeContent';
 import './Home.css';
 
 // Images
@@ -12,6 +13,7 @@ import profilePic from '../assets/profile.png';
 import educationImage from '../assets/education.png';
 import technicalImage from '../assets/technical.png';
 import extracurricularsImage from '../assets/extracurriculars.png';
+import onurBackstroke from '../assets/Onur_BACKSTROKE.jpeg';
 
 // Skills
 import pythonLogo from '../assets/skills/python.png';
@@ -57,8 +59,26 @@ const techSkills = [
   { name: 'TypeScript', logo: typescriptLogo }
 ];
 
+const CARD_TITLES = ['About Me', 'Education', 'Extracurriculars'];
+const CARD_TEXTS = [
+  <>
+    <p>Hello! I'm Onur Gul, a fourth year Mathematics and Computer Science student at McGill University, passionate about software engineering, machine learning, and competitive swimming. My journey includes internships, leadership roles, and active contributions to web development and data science projects.</p>
+    <p>Welcome to my digital space!</p>
+  </>,
+  <>
+    <p>Currently pursuing a Bachelor of Science in Mathematics and Computer Science at McGill University, expected to graduate in spring 2026.</p>
+    <p>My coursework spans Machine Learning, Quantitative Risk Management, Probability, Statistics, Calculus, Abstract Algebra, Data Structures, Algorithms and more.</p>
+  </>,
+  <>
+    <p>I've been swimming competitively for over 13 years and am currently on the McGill Varsity Swim Team. I have competed at high-level international competitions, and have qualified for Olympic Swimming Trials.</p>
+    <p>Outside of swimming, I enjoy surfing, golf, tennis, chess and much more!</p>
+  </>
+];
+
 const Home = () => {
   const [copied, setCopied] = useState(false);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const cardSwapRef = useRef(null);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('onur@onurgul.ca');
@@ -115,49 +135,74 @@ const Home = () => {
       {/* Experience Section */}
       <ExperienceSection />
 
-      {/* About Me Section */}
-      <AboutMeSection />
-
-      {/* "More About Me!" Subheading */}
-      <h2 className="section-intro">More About Me!</h2>
-
-      {/* Education Stripe */}
-      <Section
-        title="Education"
-        description={(
-          <>
-            <p>
-              Currently pursuing a Bachelor of Science in Mathematics and Computer Science at McGill University,
-              expected to graduate in spring 2026.
-            </p>
-            <br />
-            <p>
-              My coursework spans Machine Learning, Quantitative Risk Management, Probability, Statistics, Calculus, Abstract Algebra, Data Structures, Algorithms and more.
-            </p>
-          </>
-        )}
-        imageUrl={educationImage}
-        bgColor="#ffffff"
-      />
-
-      {/* Extracurriculars Stripe */}
-      <Section
-        title="Extracurriculars"
-        description={(
-          <>
-            <p>
-              I've been swimming competitively for over 13 years and am currently on the McGill Varsity Swim Team.
-              I have competed at high-level international competitions, and have qualified for Olympic Swimming Trials.
-            </p>
-            <br />
-            <p>
-              Outside of swimming, I enjoy surfing, golf, tennis, chess and much more!
-            </p>
-          </>
-        )}
-        imageUrl={extracurricularsImage}
-        bgColor="#ffffff"
-      />
+      {/* More About Me: black section, white text left, card stack right */}
+      <section className="more-about-section">
+        <div className="more-about-left">
+          <h2 className="more-about-headline">More about me.</h2>
+          <div className="more-about-body">
+            <FadeContent
+              key={activeCardIndex}
+              blur={true}
+              duration={1000}
+              ease="ease-out"
+              initialOpacity={0}
+              triggerOnMount={true}
+            >
+              {CARD_TEXTS[activeCardIndex]}
+            </FadeContent>
+          </div>
+        </div>
+        <div className="more-about-right">
+          <div className="card-swap-wrap">
+            <CardSwap
+              ref={cardSwapRef}
+              width={940}
+              height={640}
+              cardDistance={48}
+              verticalDistance={160}
+              delay={10000}
+              pauseOnHover={false}
+              easing="power1.inOut"
+              onFrontChange={setActiveCardIndex}
+              onCardClick={() => cardSwapRef.current?.next()}
+            >
+              <Card>
+                <div className="card-inner card-inner-with-header">
+                  <div className="card-header-bar">
+                    <span className="card-header-icon">&lt;/&gt;</span>
+                    {CARD_TITLES[0]}
+                  </div>
+                  <div className="card-photo-wrap">
+                    <img src={onurBackstroke} alt="Onur Backstroke" className="card-photo" />
+                  </div>
+                </div>
+              </Card>
+              <Card>
+                <div className="card-inner card-inner-with-header">
+                  <div className="card-header-bar">
+                    <span className="card-header-icon">&lt;/&gt;</span>
+                    {CARD_TITLES[1]}
+                  </div>
+                  <div className="card-photo-wrap">
+                    <img src={educationImage} alt="Education" className="card-photo" />
+                  </div>
+                </div>
+              </Card>
+              <Card>
+                <div className="card-inner card-inner-with-header">
+                  <div className="card-header-bar">
+                    <span className="card-header-icon">&lt;/&gt;</span>
+                    {CARD_TITLES[2]}
+                  </div>
+                  <div className="card-photo-wrap">
+                    <img src={extracurricularsImage} alt="Extracurriculars" className="card-photo" />
+                  </div>
+                </div>
+              </Card>
+            </CardSwap>
+          </div>
+        </div>
+      </section>
 
       {/* Technical Skills Stripe */}
       <Section

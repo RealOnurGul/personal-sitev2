@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+/* Experience section flush under hero, 0 gap */
+.home-page .experience-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 /* Hero Banner */
 .hero-banner {
   position: relative;
@@ -17,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  margin-bottom: 0;
   box-sizing: border-box;
   animation: fadeIn 3s ease forwards;
   overflow: hidden;
@@ -143,12 +150,123 @@
   }
 }
 
-/* "More About Me!" Subheading */
-.section-intro {
-  text-align: center;
-  font-size: 2rem;
-  margin: 40px 0 20px;
-  color: #333;
+/* More About Me: black section, white text left, card stack right */
+.more-about-section {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px clamp(24px, 5vw, 80px) 80px;
+  box-sizing: border-box;
+}
+
+.more-about-left {
+  flex: 1;
+  max-width: 55%;
+  padding-right: 48px;
+  padding-top: 100px;
+}
+
+.more-about-headline {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.more-about-subline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem;
+}
+
+.more-about-body {
+  color: #fff;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.more-about-body p {
+  margin: 0 0 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.more-about-body p:last-child {
+  margin-bottom: 0;
+}
+
+.more-about-right {
+  position: relative;
+  width: 58%;
+  min-width: 400px;
+  min-height: 720px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.card-swap-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 940px;
+  height: 720px;
+  flex-shrink: 0;
+}
+
+/* Card stack: 300px down, 100px left so more of photos show */
+.card-swap-wrap .card-swap-container {
+  left: auto !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: auto !important;
+  transform: translate(-100px, 300px) !important;
+}
+
+@media (max-width: 1024px) {
+  .more-about-section {
+    flex-direction: column;
+    padding: 10px 24px 60px;
+  }
+  .more-about-left {
+    max-width: 100%;
+    padding-right: 0;
+    padding-top: 100px;
+    margin-bottom: 32px;
+  }
+  .more-about-right {
+    width: 100%;
+    min-width: 0;
+    min-height: 560px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .card-swap-wrap {
+    max-width: 100%;
+    height: 560px;
+  }
+  .card-swap-wrap .card-swap-container {
+    right: 50% !important;
+    top: 0 !important;
+    bottom: auto !important;
+    transform: scale(0.65) translate(calc(50% - 100px), 300px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-swap-wrap .card-swap-container {
+    top: 0 !important;
+    transform: scale(0.5) translate(calc(50% - 100px), 300px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-wrap .card-swap-container {
+    top: 0 !important;
+    transform: scale(0.38) translate(calc(50% - 100px), 300px) !important;
+  }
 }
 
 /* Tech Icons Row */

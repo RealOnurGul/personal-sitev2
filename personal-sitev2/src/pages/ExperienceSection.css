@@ -1,6 +1,7 @@
 .experience-section {
   position: relative;
-  padding: 60px 20px;
+  margin-top: 0;
+  padding: 0 20px 110px;
   background-color: #000;
   min-height: 1300px; /* content height + 200px extra on desktop */
   overflow: hidden;
@@ -19,24 +20,18 @@
 .experience-section-content {
   position: relative;
   z-index: 1;
+  padding-top: 48px;
 }
 
-/* Black gradient at top behind EXPERIENCE title */
+/* Solid black at top so nothing shows above EXPERIENCE title */
 .experience-section-content::before {
   content: '';
   position: absolute;
-  top: -60px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 200px;
-  background: linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 40%,
-    rgba(0, 0, 0, 0.8) 60%,
-    rgba(0, 0, 0, 0.5) 80%,
-    transparent 100%
-  );
+  height: 260px;
+  background: #000;
   pointer-events: none;
   z-index: -1;
 }
@@ -166,7 +161,7 @@
 
 @media (max-width: 768px) {
   .experience-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .experience-section {
     min-height: 1600px; /* more height on mobile for dropdown space */
