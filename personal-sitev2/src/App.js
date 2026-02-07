@@ -1,6 +1,7 @@
 // File: src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import StaggeredMenu from './components/StaggeredMenu/StaggeredMenu';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -49,6 +50,7 @@ function App() {
       </div>
       {/* The site-wide footer at the bottom */}
       <Footer />
+      <Analytics />
       {/* Constant blur at the bottom of the screen, full width, always visible */}
       <div
         className="app-gradual-blur-wrap"
