@@ -33,7 +33,7 @@ function App() {
         displaySocials
         displayItemNumbering={true}
         menuButtonColor="#ffffff"
-        openMenuButtonColor="#fff"
+        openMenuButtonColor="#000000"
         changeMenuColorOnOpen={true}
         colors={['#ffffff', '#f8f8f8', '#f0f0f0']}
         logoUrl={logoImage}
