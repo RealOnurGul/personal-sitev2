@@ -1,18 +1,45 @@
 // File: src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import StaggeredMenu from './components/StaggeredMenu/StaggeredMenu';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import GradualBlur from './components/GradualBlur/GradualBlur';
+import logoImage from './assets/onur.png';
 import './App.css';
+
+const menuItems = [
+  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+  { label: 'Resume', ariaLabel: 'Open resume', link: '/resume.pdf' },
+  { label: 'Projects', ariaLabel: 'View projects', link: '/projects' }
+];
+
+const socialItems = [
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/onurgul1/' },
+  { label: 'YouTube', link: 'https://www.youtube.com/@realonurgul' },
+  { label: 'GitHub', link: 'https://github.com/RealOnurGul' }
+];
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <StaggeredMenu
+        position="right"
+        items={menuItems}
+        socialItems={socialItems}
+        displaySocials
+        displayItemNumbering={true}
+        menuButtonColor="#ffffff"
+        openMenuButtonColor="#fff"
+        changeMenuColorOnOpen={true}
+        colors={['#ffffff', '#f8f8f8', '#f0f0f0']}
+        logoUrl={logoImage}
+        accentColor="#7c3aed"
+        isFixed={true}
+        closeOnClickAway={true}
+      />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -50,20 +50,95 @@
   background-color: transparent;
 }
 
-/* Hero Banner */
+/* Hero Banner - 100px taller so we have room for bottom gradient + EXPERIENCE */
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh + 100px);
+  height: calc(100vh + 100px);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
   margin-bottom: 0;
   box-sizing: border-box;
   animation: fadeIn 3s ease forwards;
-  overflow: hidden;
+  overflow: visible;
   background: #000;
+}
+
+/* Main hero content (name + photo) centered in first 100vh */
+.hero-content-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero background extends down so it "leaks" into experience section */
+.hero-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  min-height: calc(100vh + 100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-banner-bg .color-bends-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Bottom ~100px: gradient so hero background fades to black */
+.hero-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    #000 0%,
+    #000 15%,
+    rgba(0, 0, 0, 0.98) 25%,
+    rgba(0, 0, 0, 0.95) 35%,
+    rgba(0, 0, 0, 0.9) 45%,
+    rgba(0, 0, 0, 0.82) 55%,
+    rgba(0, 0, 0, 0.7) 65%,
+    rgba(0, 0, 0, 0.55) 75%,
+    rgba(0, 0, 0, 0.38) 85%,
+    rgba(0, 0, 0, 0.2) 92%,
+    transparent 100%
+  );
+}
+
+/* EXPERIENCE title at bottom of hero, in the gradient zone */
+.hero-experience-heading {
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -158,10 +233,13 @@
 @media (max-width: 768px) {
   .hero-banner {
     height: auto;
-    min-height: 100vh;
+    min-height: calc(100vh + 100px);
     flex-direction: column;
     text-align: center;
     padding: 20px;
+  }
+  .hero-experience-heading {
+    font-size: 3.5rem;
   }
   .hero-content {
     flex-direction: column;

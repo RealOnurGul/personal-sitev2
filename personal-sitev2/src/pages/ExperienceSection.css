@@ -23,7 +23,7 @@
   padding-top: 48px;
 }
 
-/* Solid black at top so nothing shows above EXPERIENCE title */
+/* No solid bar - hero gradient handles transition; this just keeps content stacking correct */
 .experience-section-content::before {
   content: '';
   position: absolute;
@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   height: 260px;
-  background: #000;
+  background: transparent;
   pointer-events: none;
   z-index: -1;
 }

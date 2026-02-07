@@ -215,8 +215,6 @@ const ExperienceSection = () => {
         />
       </div>
       <div className="experience-section-content">
-        <h2 className="experience-title">EXPERIENCE</h2>
-
         <div className="experience-flowing-wrap" style={{ height: '600px', position: 'relative' }}>
           <FlowingMenu
           items={menuItems}
