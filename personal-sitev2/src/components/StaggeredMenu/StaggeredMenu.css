@@ -257,6 +257,9 @@
 .sm-socials {
   margin-top: auto;
   padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sm-socials-title {
@@ -264,9 +267,9 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #000000;
-  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.6);
   margin: 0 0 16px;
+  text-align: left;
 }
 
 .sm-socials-list {
@@ -276,6 +279,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 24px;
+  justify-content: flex-start;
 }
 
 .sm-socials-item {
@@ -290,6 +294,18 @@
   font-weight: 500;
   transition: color 0.2s ease;
   will-change: transform;
+  display: flex;
+  align-items: center;
+}
+
+.sm-socials-icon {
+  font-size: 1.5rem;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.sm-socials-link:hover .sm-socials-icon {
+  color: var(--sm-accent, #5227FF);
 }
 
 .sm-socials-link:hover {

@@ -1,7 +1,14 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
 import './StaggeredMenu.css';
+
+const SOCIAL_ICONS = {
+  LinkedIn: FaLinkedin,
+  YouTube: FaYoutube,
+  GitHub: FaGithub
+};
 
 const isInternalLink = (href) =>
   typeof href === 'string' && href.startsWith('/') && !href.startsWith('//') && !/\.(pdf|zip|doc|docx)$/i.test(href);
@@ -451,13 +458,16 @@ export const StaggeredMenu = ({
               <h3 className="sm-socials-title">Socials</h3>
               {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
               <ul className="sm-socials-list">
-                {socialItems.map((s, i) => (
-                  <li key={s.label + i} className="sm-socials-item">
-                    <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link" onClick={closeMenu}>
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
+                {socialItems.map((s, i) => {
+                  const Icon = SOCIAL_ICONS[s.label];
+                  return (
+                    <li key={s.label + i} className="sm-socials-item">
+                      <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link" aria-label={s.label} onClick={closeMenu}>
+                        {Icon ? <Icon className="sm-socials-icon" /> : s.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}

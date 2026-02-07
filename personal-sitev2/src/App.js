@@ -35,9 +35,9 @@ function App() {
         menuButtonColor="#ffffff"
         openMenuButtonColor="#000000"
         changeMenuColorOnOpen={true}
-        colors={['#ffffff', '#f8f8f8', '#f0f0f0']}
+        colors={['#5227FF', '#6b3dff', '#8455ff']}
         logoUrl={logoImage}
-        accentColor="#7c3aed"
+        accentColor="#5227FF"
         isFixed={true}
         closeOnClickAway={true}
       />
