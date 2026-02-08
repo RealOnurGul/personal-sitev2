@@ -5,6 +5,16 @@ import PasswordGate from './components/PasswordGate';
 import App from './App';
 import './index.css';
 
+// Suppress benign ResizeObserver loop error (common on mobile/resize; does not affect behavior)
+const resizeObserverErr = (e) => {
+  if (e.message === 'ResizeObserver loop completed with undelivered notifications.' || e.message === 'ResizeObserver loop limit exceeded') {
+    e.stopImmediatePropagation();
+    return true;
+  }
+  return false;
+};
+window.addEventListener('error', resizeObserverErr);
+
 // Toggle this flag to enable/disable the password gate globally
 const ENABLE_PASSWORD_GATE = false;
 

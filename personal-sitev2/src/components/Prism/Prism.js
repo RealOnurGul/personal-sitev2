@@ -232,7 +232,7 @@ const Prism = ({
       offsetPxBuf[1] = offY * dpr;
       program.uniforms.uPxScale.value = 1 / ((gl.drawingBufferHeight || 1) * 0.1 * SCALE);
     };
-    const ro = new ResizeObserver(resize);
+    const ro = new ResizeObserver(() => requestAnimationFrame(resize));
     ro.observe(container);
     resize();
 

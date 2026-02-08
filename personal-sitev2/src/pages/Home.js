@@ -7,6 +7,7 @@ import TiltedCard from '../components/TiltedCard/TiltedCard';
 import CardSwap, { Card } from '../components/CardSwap/CardSwap';
 import FadeContent from '../components/FadeContent';
 import Beams from '../components/Beams/Beams';
+import ElectricBorder from '../components/ElectricBorder/ElectricBorder';
 import './Home.css';
 
 // Images
@@ -36,8 +37,8 @@ import sqlLogo from '../assets/skills/sql.png';
 import cppLogo from '../assets/skills/cpp.png';
 import typescriptLogo from '../assets/skills/typescript.png';
 
-// Icons for bottom contact
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
+// Icons for Get in Touch
+import { FaEnvelope, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
 
 const techSkills = [
   { name: 'Python', logo: pythonLogo },
@@ -255,61 +256,58 @@ const Home = () => {
           speed={38}
           direction="left"
         />
-      </div>
 
-      {/* Contact Section at the bottom */}
-      <div className="home-contact-section">
-        <h2>Get in Touch</h2>
-        <p>I’d love to hear your thoughts!</p>
+        {/* Get in Touch — same section, same background as Technical Skills */}
+        <div className="get-in-touch-wrap">
+          <ElectricBorder
+            color="#5227FF"
+            speed={1}
+            chaos={0.12}
+            thickness={2}
+            borderRadius={16}
+            className="get-in-touch-card"
+          >
+            <div className="get-in-touch-content">
+              <h2 className="get-in-touch-title">Get in Touch</h2>
+              <p className="get-in-touch-subtitle">I'd love to hear your thoughts!</p>
 
-        <div className="contact-details">
-          <div className="contact-item">
-            <FaMapMarkerAlt className="contact-icon" />
-            <span>Vancouver BC, Canada</span>
-          </div>
-          <div
-            className="contact-item email-item"
-            onClick={handleCopyEmail}
-          >
-            <FaEnvelope className="contact-icon" />
-            <span className="clickable-email">onur@onurgul.ca</span>
-          </div>
-          <div className="contact-item">
-            <FaPhoneAlt className="contact-icon" />
-            <span>604-562-2408</span>
-          </div>
-          <p className={`clipboard-msg ${copied ? 'show' : ''}`}>
-            Copied to clipboard!
-          </p>
-        </div>
+              <a href="mailto:onur@onurgul.ca" className="get-in-touch-email">
+                <FaEnvelope className="get-in-touch-email-icon" />
+                <span>onur@onurgul.ca</span>
+              </a>
+              <div
+                className="get-in-touch-copy"
+                onClick={handleCopyEmail}
+                onKeyDown={(e) => e.key === 'Enter' && handleCopyEmail()}
+                role="button"
+                tabIndex={0}
+              >
+                Copy email
+              </div>
+              <p className={`get-in-touch-clipboard-msg ${copied ? 'show' : ''}`}>
+                Copied to clipboard!
+              </p>
 
-        <div className="contact-socials">
-          <a
-            href="https://www.linkedin.com/in/onurgul1/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-social-link linkedin-link"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/RealOnurGul"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-social-link github-link"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.youtube.com/@realonurgul"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-social-link youtube-link"
-          >
-            <FaYoutube />
-          </a>
+              <div className="get-in-touch-socials">
+                <a href="https://www.linkedin.com/in/onurgul1/" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="LinkedIn">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/RealOnurGul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="GitHub">
+                  <FaGithub />
+                </a>
+                <a href="https://www.youtube.com/@realonurgul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="YouTube">
+                  <FaYoutube />
+                </a>
+              </div>
+
+              <a href="mailto:onur@onurgul.ca?subject=Let's%20schedule%20a%20call" className="get-in-touch-schedule-btn">
+                Schedule a Call
+              </a>
+            </div>
+          </ElectricBorder>
         </div>
       </div>
+
     </div>
   );
 };

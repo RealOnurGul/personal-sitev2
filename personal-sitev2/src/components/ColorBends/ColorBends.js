@@ -184,7 +184,7 @@ export default function ColorBends({
     handleResize();
 
     if (typeof ResizeObserver !== 'undefined') {
-      const ro = new ResizeObserver(handleResize);
+      const ro = new ResizeObserver(() => requestAnimationFrame(handleResize));
       ro.observe(container);
       resizeObserverRef.current = ro;
     } else {

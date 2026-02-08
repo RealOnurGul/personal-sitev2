@@ -50,6 +50,149 @@
   background-color: transparent;
 }
 
+/* Get in Touch — same section as Technical Skills (beams background) */
+.get-in-touch-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  margin: 60px auto 80px;
+  padding: 0 24px;
+}
+
+.get-in-touch-card {
+  background-color: #000;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.get-in-touch-wrap .electric-border,
+.get-in-touch-wrap .eb-canvas-container,
+.get-in-touch-wrap .eb-canvas {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.get-in-touch-card .eb-content {
+  padding: 36px 32px;
+}
+
+.get-in-touch-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.get-in-touch-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.get-in-touch-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.get-in-touch-email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.get-in-touch-email:hover {
+  color: #5227FF;
+}
+
+.get-in-touch-email-icon {
+  font-size: 1.25rem;
+  color: #5227FF;
+}
+
+.get-in-touch-copy {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.get-in-touch-copy:hover {
+  color: #5227FF;
+}
+
+.get-in-touch-clipboard-msg {
+  font-size: 0.9rem;
+  color: #5227FF;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.get-in-touch-clipboard-msg.show {
+  opacity: 1;
+}
+
+.get-in-touch-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.get-in-touch-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.get-in-touch-social-link:hover {
+  background-color: rgba(82, 39, 255, 0.4);
+  color: #5227FF;
+}
+
+.get-in-touch-schedule-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #5227FF;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  align-self: flex-start;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.get-in-touch-schedule-btn:hover {
+  background-color: #6b3dff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .get-in-touch-wrap {
+    margin: 40px auto 60px;
+    padding: 0 20px;
+  }
+
+  .get-in-touch-card .eb-content {
+    padding: 28px 24px;
+  }
+}
+
 /* Hero Banner - 100px taller so we have room for bottom gradient + EXPERIENCE */
 .hero-banner {
   position: relative;
@@ -433,115 +576,3 @@
   opacity: 1;
 }
 
-/* Contact Section (bottom) */
-.home-contact-section {
-  max-width: 2400px;
-  margin: 60px auto;
-  background: #f2f2f2;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px 150px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-@media (hover: hover) {
-  .home-contact-section:hover {
-    transform: scale(1.02);
-  }
-}
-
-.home-contact-section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.home-contact-section p {
-  font-size: 1rem;
-  color: #555;
-}
-
-.contact-details {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  color: #555;
-  cursor: default;
-}
-
-.contact-icon {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-/* Underline email on hover */
-.email-item:hover .clickable-email {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-/* Fade for "Copied to clipboard!" */
-.clipboard-msg {
-  margin-top: 10px;
-  color: green;
-  font-size: 0.9rem;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.clipboard-msg.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Social icons */
-.contact-socials {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.contact-social-link {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.5rem;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.linkedin-link {
-  background-color: #0B65C2;
-}
-.github-link {
-  background-color: #1F2328;
-}
-.youtube-link {
-  background-color: #FF0000;
-}
-
-.contact-social-link:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .home-contact-section {
-    margin: 40px 20px;
-    padding: 20px;
-  }
-}
