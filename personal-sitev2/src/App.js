@@ -5,13 +5,14 @@ import { Analytics } from '@vercel/analytics/react';
 import StaggeredMenu from './components/StaggeredMenu/StaggeredMenu';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
+import Resume from './pages/Resume';
 import GradualBlur from './components/GradualBlur/GradualBlur';
 import logoImage from './assets/onur.png';
 import './App.css';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'Resume', ariaLabel: 'Open resume', link: '/resume.pdf' },
+  { label: 'Resume', ariaLabel: 'View resume', link: '/resume' },
   { label: 'Projects', ariaLabel: 'View projects', link: '/projects' }
 ];
 
@@ -43,6 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>
       <Analytics />
