@@ -30,7 +30,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  background-color: #5227FF;
+  background-color: #B19EEF;
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
@@ -42,7 +42,7 @@
 }
 
 .resume-download-btn:hover {
-  background-color: #6b3dff;
+  background-color: #c4b5f7;
   transform: translateY(-1px);
 }
 
@@ -118,13 +118,13 @@
   }
 
   .resume-mobile-btn-primary {
-    background-color: #5227FF;
+    background-color: #B19EEF;
     color: #fff;
   }
 
   .resume-mobile-btn-primary:hover,
   .resume-mobile-btn-primary:active {
-    background-color: #6b3dff;
+    background-color: #c4b5f7;
   }
 
   .resume-mobile-btn-secondary {
@@ -135,8 +135,8 @@
 
   .resume-mobile-btn-secondary:hover,
   .resume-mobile-btn-secondary:active {
-    border-color: #5227FF;
-    color: #5227FF;
+    border-color: #B19EEF;
+    color: #B19EEF;
   }
 
   .resume-page-content {

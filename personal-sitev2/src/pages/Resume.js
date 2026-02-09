@@ -15,7 +15,7 @@ const Resume = () => {
           bendStrength={-0.5}
           interactive={true}
           parallax={true}
-          linesGradient={['#5227FF', '#6b3dff', '#8455ff']}
+          linesGradient={['#B19EEF', '#c4b5f7', '#9f8ae0']}
         />
       </div>
       <div className="resume-page-content">

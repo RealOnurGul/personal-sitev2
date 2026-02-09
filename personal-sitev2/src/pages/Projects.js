@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Plasma from '../components/Plasma/Plasma';
 import './Projects.css';
 import { FaGlobe, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -153,6 +154,17 @@ const Projects = () => {
 
   return (
     <div className="projects-page">
+      <div className="projects-page-bg" aria-hidden="true">
+        <Plasma
+          color="#B19EEF"
+          speed={0.6}
+          direction="forward"
+          scale={1.1}
+          opacity={0.8}
+          mouseInteractive={true}
+        />
+      </div>
+      <div className="projects-page-content">
       <h2 className="projects-title">Welcome to my projects dashboard! With more to come!</h2>
 
       {/* Grid of bigger squares */}
@@ -252,6 +264,7 @@ const Projects = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

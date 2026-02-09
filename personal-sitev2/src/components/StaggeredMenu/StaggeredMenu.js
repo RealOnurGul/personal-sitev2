@@ -15,7 +15,7 @@ const isInternalLink = (href) =>
 
 export const StaggeredMenu = ({
   position = 'right',
-  colors = ['#B19EEF', '#5227FF'],
+  colors = ['#5227FF', '#6b3dff', '#8455ff'],
   items = [],
   socialItems = [],
   displaySocials = true,

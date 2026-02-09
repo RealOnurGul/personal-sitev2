@@ -260,7 +260,7 @@ const Home = () => {
         {/* Get in Touch — same section, same background as Technical Skills */}
         <div className="get-in-touch-wrap">
           <ElectricBorder
-            color="#5227FF"
+            color="#B19EEF"
             speed={1}
             chaos={0.12}
             thickness={2}

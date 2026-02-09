@@ -1,8 +1,23 @@
 .projects-page {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+.projects-page-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.projects-page-content {
+  position: relative;
+  z-index: 1;
   padding: 60px 20px;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -10,7 +25,7 @@
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 40px;
-  color: #333;
+  color: #fff;
 }
 
 .projects-grid {
@@ -22,12 +37,13 @@
 
 .project-card {
   width: 30%;
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: rgba(20, 20, 24, 0.85);
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,22 +51,25 @@
 
 .project-card:hover {
   transform: translateY(-3px);
+  border-color: rgba(82, 39, 255, 0.4);
+  box-shadow: 0 8px 28px rgba(82, 39, 255, 0.2);
 }
 
 .project-card-image {
   width: 100%;
   height: 200px;
   object-fit: contain;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .project-card-text {
   padding: 15px;
   font-size: 1.1rem;
   text-align: center;
-  color: #333;
+  color: #fff;
 }
 
-/* Projects Drawer */
+/* Projects Drawer - dark */
 .projects-drawer-overlay {
   position: fixed;
   top: 0;
@@ -59,7 +78,7 @@
   height: 100%;
   opacity: 0;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -73,11 +92,13 @@
 }
 
 .projects-drawer-container {
-  background-color: #fff;
+  background-color: #0f0f12;
   width: 100%;
   height: 60vh;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
   transform: translateY(100%);
   transition: transform 0.3s ease;
   position: relative;
@@ -97,12 +118,12 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.2s ease;
 }
 
 .projects-drawer-close:hover {
-  color: #000;
+  color: #fff;
 }
 
 .projects-drawer-content {
@@ -115,34 +136,35 @@
 .projects-drawer-title {
   margin: 0 0 15px;
   font-size: 1.5rem;
-  color: #333;
+  color: #fff;
 }
 
 .projects-drawer-description p {
   margin-bottom: 10px;
-  color: #555;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.4;
 }
 
 .project-description-link {
-  color: #0A66C2;
+  color: #B19EEF;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .project-description-link:hover {
-  color: #004182;
+  color: #c4b5f7;
   text-decoration: underline;
 }
 
 .projects-drawer-footer-bar {
-  background-color: #f1f1f1;
+  background-color: rgba(20, 20, 24, 0.95);
   border-radius: 0 0 20px 20px;
   padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .projects-drawer-footer-left {
@@ -154,7 +176,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #003865;
+  background-color: #1a1a1f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,11 +187,15 @@
 }
 
 .footer-icon-circle:hover {
-  background-color: #001f4d;
+  background-color: #252530;
 }
 
 .linkedin-circle {
   background-color: #0A66C2;
+}
+
+.globe-circle {
+  background-color: #B19EEF;
 }
 
 .demo-circle {
@@ -182,11 +208,15 @@
 
 .projects-drawer-footer-right {
   font-size: 1rem;
-  color: #777;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 768px) {
+  .projects-page-content {
+    padding: 24px 16px;
+  }
+
   .project-card {
     width: 90%;
   }
