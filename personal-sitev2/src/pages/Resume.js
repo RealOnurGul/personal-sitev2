@@ -1,10 +1,24 @@
 import React from 'react';
 import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa';
+import FloatingLines from '../components/FloatingLines/FloatingLines';
 import './Resume.css';
 
 const Resume = () => {
   return (
     <div className="resume-page">
+      <div className="resume-page-bg" aria-hidden="true">
+        <FloatingLines
+          enabledWaves={['top', 'middle', 'bottom']}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+          linesGradient={['#5227FF', '#6b3dff', '#8455ff']}
+        />
+      </div>
+      <div className="resume-page-content">
       {/* Desktop: download + embedded PDF */}
       <a
         href="/resume.pdf"
@@ -45,6 +59,7 @@ const Resume = () => {
             Download
           </a>
         </div>
+      </div>
       </div>
     </div>
   );
