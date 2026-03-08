@@ -1,7 +1,7 @@
 .home-page {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -203,17 +203,13 @@
   }
 }
 
-/* Hero Banner - 100px taller so we have room for bottom gradient + EXPERIENCE */
-.hero-banner {
+/* Hero + Experience wrapper: single continuous ColorBends background */
+.hero-experience-wrapper {
   position: relative;
   width: 100%;
-  min-height: calc(100vh + 100px);
-  height: calc(100vh + 100px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
   margin-bottom: 0;
   box-sizing: border-box;
   animation: fadeIn 3s ease forwards;
@@ -221,9 +217,25 @@
   background: #000;
 }
 
+.hero-experience-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-experience-bg .color-bends-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Main hero content (name + photo) centered in first 100vh */
 .hero-content-wrap {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,59 +243,15 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
 
-/* Hero background extends down so it "leaks" into experience section */
-.hero-banner-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  min-height: calc(100vh + 100px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-banner-bg .color-bends-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Bottom ~100px: gradient so hero background fades to black */
-.hero-bottom-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(
-    to top,
-    #000 0%,
-    #000 15%,
-    rgba(0, 0, 0, 0.98) 25%,
-    rgba(0, 0, 0, 0.95) 35%,
-    rgba(0, 0, 0, 0.9) 45%,
-    rgba(0, 0, 0, 0.82) 55%,
-    rgba(0, 0, 0, 0.7) 65%,
-    rgba(0, 0, 0, 0.55) 75%,
-    rgba(0, 0, 0, 0.38) 85%,
-    rgba(0, 0, 0, 0.2) 92%,
-    transparent 100%
-  );
-}
-
-/* EXPERIENCE title at bottom of hero, in the gradient zone */
+/* EXPERIENCE heading between hero and experience list */
 .hero-experience-heading {
-  position: absolute;
-  bottom: 38px;
-  left: 0;
-  right: 0;
+  position: relative;
   margin: 0;
+  padding: 0 0 30px;
   font-size: 5rem;
   font-weight: 700;
   text-align: center;
@@ -292,6 +260,36 @@
   letter-spacing: 0.02em;
   z-index: 2;
   pointer-events: none;
+}
+
+/* Experience section on the hero background */
+.hero-experience-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+/* Bottom gradient: fades the combined hero+experience to the 3D zone */
+.hero-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    #06060f 0%,
+    #06060f 10%,
+    rgba(6, 6, 15, 0.95) 25%,
+    rgba(6, 6, 15, 0.85) 40%,
+    rgba(6, 6, 15, 0.65) 55%,
+    rgba(6, 6, 15, 0.4) 70%,
+    rgba(6, 6, 15, 0.15) 85%,
+    transparent 100%
+  );
 }
 
 .hero-content {
@@ -384,11 +382,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero-banner {
-    height: auto;
-    min-height: calc(100vh + 100px);
-    flex-direction: column;
-    text-align: center;
+  .hero-content-wrap {
     padding: 20px;
   }
   .hero-experience-heading {
@@ -414,6 +408,9 @@
   .hero-profile-pic {
     width: 250px;
     height: 250px;
+  }
+  .hero-experience-section {
+    padding-bottom: 20px;
   }
 }
 

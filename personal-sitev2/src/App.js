@@ -1,6 +1,7 @@
 // File: src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ReactLenis } from 'lenis/react';
 import { Analytics } from '@vercel/analytics/react';
 import StaggeredMenu from './components/StaggeredMenu/StaggeredMenu';
 import Home from './pages/Home';
@@ -24,6 +25,7 @@ const socialItems = [
 
 function App() {
   return (
+    <ReactLenis root options={{ lerp: 0.07, duration: 1.2, smoothWheel: true, syncTouch: true }}>
     <div className="App">
       <StaggeredMenu
         position="right"
@@ -75,6 +77,7 @@ function App() {
         />
       </div>
     </div>
+    </ReactLenis>
   );
 }
 

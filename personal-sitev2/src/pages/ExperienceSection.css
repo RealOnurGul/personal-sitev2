@@ -3,7 +3,7 @@
   margin-top: 0;
   padding: 0 20px 110px;
   background-color: transparent;
-  min-height: 1300px; /* content height + 200px extra on desktop */
+  min-height: 1150px; /* content height + 200px extra on desktop */
   overflow: hidden;
 }
 
