@@ -57,10 +57,12 @@ const AboutWithOPortal = ({ scrollProgressRef, adaptive }) => {
           >
             ABOUT
             <meshStandardMaterial
-              color="#888"
-              metalness={0.9}
-              roughness={0.15}
-              envMapIntensity={1.5}
+              color="#e8e8f0"
+              emissive="#c0c0d0"
+              emissiveIntensity={0.2}
+              metalness={0.6}
+              roughness={0.25}
+              envMapIntensity={1.3}
             />
           </Text3D>
         </Center>

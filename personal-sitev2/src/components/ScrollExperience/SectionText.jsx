@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text3D, Center } from '@react-three/drei';
 import * as THREE from 'three';
@@ -8,10 +8,6 @@ const FONT_URL = 'https://cdn.jsdelivr.net/npm/three@0.167.1/examples/fonts/helv
 
 const SectionText = ({ text, position, theme, scrollProgressRef, sectionIndex, adaptive }) => {
   const groupRef = useRef();
-
-  const textColor = useMemo(() => {
-    return theme === 'light' ? '#c0c0c0' : '#9090b0';
-  }, [theme]);
 
   const bevelSegments = adaptive?.textBevelSegments ?? 4;
   const curveSegments = adaptive?.textCurveSegments ?? 12;
@@ -52,10 +48,12 @@ const SectionText = ({ text, position, theme, scrollProgressRef, sectionIndex, a
         >
           {text}
           <meshStandardMaterial
-            color={textColor}
-            metalness={0.92}
-            roughness={0.12}
-            envMapIntensity={1.5}
+            color="#e8e8f0"
+            emissive="#c0c0d0"
+            emissiveIntensity={0.2}
+            metalness={0.6}
+            roughness={0.25}
+            envMapIntensity={1.3}
           />
         </Text3D>
       </Center>
