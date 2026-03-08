@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './ExperienceSection.css';
 import { FaLinkedin, FaGlobe } from 'react-icons/fa';
 import FlowingMenu from '../components/FlowingMenu/FlowingMenu';
-import Prism from '../components/Prism/Prism';
 
 import hypekraftImage from '../assets/hypekraft.png';
 import shopifyImage from '../assets/shopify.png';
@@ -199,35 +198,20 @@ const ExperienceSection = () => {
 
   return (
     <div className="experience-section">
-      <div className="experience-section-bg">
-        <Prism
-          animationType="rotate"
-          timeScale={0.05}
-          height={3.5}
-          baseWidth={5.4}
-          scale={3.4}
-          hueShift={0}
-          colorFrequency={1}
-          noise={0}
-          glow={0.7}
-          bloom={0.7}
-          suspendWhenOffscreen={true}
-        />
-      </div>
       <div className="experience-section-content">
         <div className="experience-flowing-wrap" style={{ height: '600px', position: 'relative' }}>
           <FlowingMenu
-          items={menuItems}
-          speed={15}
-          textColor="#ffffff"
-          bgColor="#000"
-          marqueeBgColor="#ffffff"
-          marqueeTextColor="#060010"
-          borderColor="#ffffff"
-          onItemClick={handleItemClick}
-          expandedIndex={selectedIndex}
-          renderDetail={renderDetail}
-        />
+            items={menuItems}
+            speed={15}
+            textColor="#ffffff"
+            bgColor="#000"
+            marqueeBgColor="#ffffff"
+            marqueeTextColor="#060010"
+            borderColor="#ffffff"
+            onItemClick={handleItemClick}
+            expandedIndex={selectedIndex}
+            renderDetail={renderDetail}
+          />
         </div>
       </div>
     </div>

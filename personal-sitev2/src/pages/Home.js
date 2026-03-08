@@ -141,82 +141,10 @@ const Home = () => {
         <h2 className="hero-experience-heading">EXPERIENCE</h2>
       </div>
 
-      {/* Experience Section (list only; title is in hero) */}
-      <ExperienceSection />
-
-      {/* More About Me: black section, white text left, card stack right */}
-      <section className="more-about-section">
-        <div className="more-about-left">
-          <h2 className="more-about-headline">More about me.</h2>
-          <div className="more-about-body">
-            <FadeContent
-              key={activeCardIndex}
-              blur={true}
-              duration={1000}
-              ease="ease-out"
-              initialOpacity={0}
-              triggerOnMount={true}
-            >
-              {CARD_TEXTS[activeCardIndex]}
-            </FadeContent>
-          </div>
-        </div>
-        <div className="more-about-right">
-          <div className="card-swap-wrap">
-            <CardSwap
-              ref={cardSwapRef}
-              width={940}
-              height={640}
-              cardDistance={48}
-              verticalDistance={160}
-              delay={10000}
-              pauseOnHover={false}
-              easing="power1.inOut"
-              onFrontChange={setActiveCardIndex}
-              onCardClick={() => cardSwapRef.current?.next()}
-            >
-              <Card>
-                <div className="card-inner card-inner-with-header">
-                  <div className="card-header-bar">
-                    <span className="card-header-icon">&lt;/&gt;</span>
-                    {CARD_TITLES[0]}
-                  </div>
-                  <div className="card-photo-wrap">
-                    <img src={onurBackstroke} alt="Onur Backstroke" className="card-photo" />
-                  </div>
-                </div>
-              </Card>
-              <Card>
-                <div className="card-inner card-inner-with-header">
-                  <div className="card-header-bar">
-                    <span className="card-header-icon">&lt;/&gt;</span>
-                    {CARD_TITLES[1]}
-                  </div>
-                  <div className="card-photo-wrap">
-                    <img src={educationImage} alt="Education" className="card-photo" />
-                  </div>
-                </div>
-              </Card>
-              <Card>
-                <div className="card-inner card-inner-with-header">
-                  <div className="card-header-bar">
-                    <span className="card-header-icon">&lt;/&gt;</span>
-                    {CARD_TITLES[2]}
-                  </div>
-                  <div className="card-photo-wrap">
-                    <img src={extracurricularsImage} alt="Extracurriculars" className="card-photo" />
-                  </div>
-                </div>
-              </Card>
-            </CardSwap>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Skills with Beams background */}
-      <div className="technical-skills-with-beams">
+      {/* Everything below the hero shares one Beams background */}
+      <div className="main-beams-section">
         <Beams
-          beamWidth={2.5}
+          beamWidth={1.25}
           beamHeight={22}
           beamNumber={20}
           lightColor="#b2c7f0"
@@ -225,86 +153,163 @@ const Home = () => {
           scale={0.23}
           rotation={30}
         />
-        <Section
-          title="Technical Skills"
-          description={(
-            <>
-              <p>
-                I'm currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
-                languages and frameworks by tackling various projects.
-              </p>
-              <br />
-              <p>
-                As a co-founder of the McGill Quantitative Research Club, I am currently leading our algorithmic trading sector, working on developing a predictor for currency futures.
-              </p>
-              <br />
-              <p>
-                I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
-              </p>
-            </>
-          )}
-          imageUrl={technicalImage}
-          bgColor="transparent"
-          className="section--shorter section--on-beams"
-        />
+        <div className="main-beams-content">
+          {/* Experience Section (list only; title is in hero) */}
+          <ExperienceSection />
 
-        {/* Technical skills conveyor belt */}
-        <LogoLoop
-          logos={techSkills}
-          logoHeight={52}
-          gap={40}
-          speed={38}
-          direction="left"
-        />
-
-        {/* Get in Touch — same section, same background as Technical Skills */}
-        <div className="get-in-touch-wrap">
-          <ElectricBorder
-            color="#B19EEF"
-            speed={1}
-            chaos={0.12}
-            thickness={2}
-            borderRadius={16}
-            className="get-in-touch-card"
-          >
-            <div className="get-in-touch-content">
-              <h2 className="get-in-touch-title">Get in Touch</h2>
-              <p className="get-in-touch-subtitle">I'd love to hear your thoughts!</p>
-
-              <a href="mailto:onur@onurgul.ca" className="get-in-touch-email">
-                <FaEnvelope className="get-in-touch-email-icon" />
-                <span>onur@onurgul.ca</span>
-              </a>
-              <div
-                className="get-in-touch-copy"
-                onClick={handleCopyEmail}
-                onKeyDown={(e) => e.key === 'Enter' && handleCopyEmail()}
-                role="button"
-                tabIndex={0}
-              >
-                Copy email
+          {/* More About Me: black section, white text left, card stack right */}
+          <section className="more-about-section">
+            <div className="more-about-left">
+              <h2 className="more-about-headline">More about me.</h2>
+              <div className="more-about-body">
+                <FadeContent
+                  key={activeCardIndex}
+                  blur={true}
+                  duration={1000}
+                  ease="ease-out"
+                  initialOpacity={0}
+                  triggerOnMount={true}
+                >
+                  {CARD_TEXTS[activeCardIndex]}
+                </FadeContent>
               </div>
-              <p className={`get-in-touch-clipboard-msg ${copied ? 'show' : ''}`}>
-                Copied to clipboard!
-              </p>
-
-              <div className="get-in-touch-socials">
-                <a href="https://www.linkedin.com/in/onurgul1/" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="LinkedIn">
-                  <FaLinkedin />
-                </a>
-                <a href="https://github.com/RealOnurGul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="GitHub">
-                  <FaGithub />
-                </a>
-                <a href="https://www.youtube.com/@realonurgul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="YouTube">
-                  <FaYoutube />
-                </a>
-              </div>
-
-              <a href="mailto:onur@onurgul.ca?subject=Let's%20schedule%20a%20call" className="get-in-touch-schedule-btn">
-                Schedule a Call
-              </a>
             </div>
-          </ElectricBorder>
+            <div className="more-about-right">
+              <div className="card-swap-wrap">
+                <CardSwap
+                  ref={cardSwapRef}
+                  width={940}
+                  height={640}
+                  cardDistance={48}
+                  verticalDistance={160}
+                  delay={10000}
+                  pauseOnHover={false}
+                  easing="power1.inOut"
+                  onFrontChange={setActiveCardIndex}
+                  onCardClick={() => cardSwapRef.current?.next()}
+                >
+                  <Card>
+                    <div className="card-inner card-inner-with-header">
+                      <div className="card-header-bar">
+                        <span className="card-header-icon">&lt;/&gt;</span>
+                        {CARD_TITLES[0]}
+                      </div>
+                      <div className="card-photo-wrap">
+                        <img src={onurBackstroke} alt="Onur Backstroke" className="card-photo" />
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="card-inner card-inner-with-header">
+                      <div className="card-header-bar">
+                        <span className="card-header-icon">&lt;/&gt;</span>
+                        {CARD_TITLES[1]}
+                      </div>
+                      <div className="card-photo-wrap">
+                        <img src={educationImage} alt="Education" className="card-photo" />
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="card-inner card-inner-with-header">
+                      <div className="card-header-bar">
+                        <span className="card-header-icon">&lt;/&gt;</span>
+                        {CARD_TITLES[2]}
+                      </div>
+                      <div className="card-photo-wrap">
+                        <img src={extracurricularsImage} alt="Extracurriculars" className="card-photo" />
+                      </div>
+                    </div>
+                  </Card>
+                </CardSwap>
+              </div>
+            </div>
+          </section>
+
+          {/* Technical Skills + Get in Touch, on the same Beams background */}
+          <div className="technical-skills-with-beams">
+            <Section
+              title="Technical Skills"
+              description={(
+                <>
+                  <p>
+                    I'm currently in my fourth year at McGill University, studying Mathematics and Computer Science, constantly learning new
+                    languages and frameworks by tackling various projects.
+                  </p>
+                  <br />
+                  <p>
+                    As a co-founder of the McGill Quantitative Research Club, I am currently leading our algorithmic trading sector, working on developing a predictor for currency futures.
+                  </p>
+                  <br />
+                  <p>
+                    I have also had the opportunity to present previous trading algorithms, including a Pearson correlation model and an RNN model, which I presented at the National Bank.
+                  </p>
+                </>
+              )}
+              imageUrl={technicalImage}
+              bgColor="transparent"
+              className="section--shorter section--on-beams"
+            />
+
+            {/* Technical skills conveyor belt */}
+            <LogoLoop
+              logos={techSkills}
+              logoHeight={52}
+              gap={40}
+              speed={38}
+              direction="left"
+            />
+
+            {/* Get in Touch — same section, same background as Technical Skills */}
+            <div className="get-in-touch-wrap">
+              <ElectricBorder
+                color="#B19EEF"
+                speed={1}
+                chaos={0.12}
+                thickness={2}
+                borderRadius={16}
+                className="get-in-touch-card"
+              >
+                <div className="get-in-touch-content">
+                  <h2 className="get-in-touch-title">Get in Touch</h2>
+                  <p className="get-in-touch-subtitle">I'd love to hear your thoughts!</p>
+
+                  <a href="mailto:onur@onurgul.ca" className="get-in-touch-email">
+                    <FaEnvelope className="get-in-touch-email-icon" />
+                    <span>onur@onurgul.ca</span>
+                  </a>
+                  <div
+                    className="get-in-touch-copy"
+                    onClick={handleCopyEmail}
+                    onKeyDown={(e) => e.key === 'Enter' && handleCopyEmail()}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Copy email
+                  </div>
+                  <p className={`get-in-touch-clipboard-msg ${copied ? 'show' : ''}`}>
+                    Copied to clipboard!
+                  </p>
+
+                  <div className="get-in-touch-socials">
+                    <a href="https://www.linkedin.com/in/onurgul1/" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="LinkedIn">
+                      <FaLinkedin />
+                    </a>
+                    <a href="https://github.com/RealOnurGul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="GitHub">
+                      <FaGithub />
+                    </a>
+                    <a href="https://www.youtube.com/@realonurgul" target="_blank" rel="noopener noreferrer" className="get-in-touch-social-link" aria-label="YouTube">
+                      <FaYoutube />
+                    </a>
+                  </div>
+
+                  <a href="mailto:onur@onurgul.ca?subject=Let's%20schedule%20a%20call" className="get-in-touch-schedule-btn">
+                    Schedule a Call
+                  </a>
+                </div>
+              </ElectricBorder>
+            </div>
+          </div>
         </div>
       </div>
 

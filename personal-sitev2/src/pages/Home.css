@@ -14,15 +14,14 @@
   padding-top: 0 !important;
 }
 
-/* Technical Skills + Beams background */
-.technical-skills-with-beams {
+/* Global Beams background wrapper for everything below hero */
+.main-beams-section {
   position: relative;
   width: 100%;
-  min-height: 700px;
   overflow: visible;
   background: #000;
 }
-.technical-skills-with-beams .beams-wrapper {
+.main-beams-section .beams-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,15 +29,26 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  min-height: 700px;
 }
-.technical-skills-with-beams .beams-wrapper .beams-container {
+.main-beams-section .beams-wrapper .beams-container {
   position: absolute !important;
   inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
   min-height: 100% !important;
+}
+.main-beams-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Technical Skills + Get in Touch content sitting on Beams */
+.technical-skills-with-beams {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  overflow: visible;
 }
 .technical-skills-with-beams .section-container {
   background: none !important;
@@ -409,7 +419,7 @@
 
 /* More About Me: black section, white text left, card stack right */
 .more-about-section {
-  background: #000;
+  background: transparent;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
