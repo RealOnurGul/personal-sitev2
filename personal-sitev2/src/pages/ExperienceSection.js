@@ -3,7 +3,7 @@ import './ExperienceSection.css';
 import { FaLinkedin, FaGlobe } from 'react-icons/fa';
 import FlowingMenu from '../components/FlowingMenu/FlowingMenu';
 
-import hypekraftImage from '../assets/hypekraft.png';
+import hypekraftImage from '../assets/hypekraft.webp';
 import shopifyImage from '../assets/shopify.png';
 import rentyvrImage from '../assets/rentYVR.jpeg';
 import nbcImage from '../assets/nbc.png';

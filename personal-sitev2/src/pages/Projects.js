@@ -4,12 +4,12 @@ import './Projects.css';
 import { FaGlobe, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa';
 
 /* Placeholder images for the project squares. Replace with your actual logos if you have them. */
-import rideshareImage from '../assets/rideshare.png';
+import rideshareImage from '../assets/rideshare.webp';
 import dodecordleImage from '../assets/dodecordle.png';
 import mlstocksImage from '../assets/mlstocks.png';
 import mcgillquantImage from '../assets/mcgillquant.png';
 import pharmahacksImage from '../assets/pharmahacks.png';
-import canaconImage from '../assets/canacon_square_logo.png';
+import canaconImage from '../assets/canacon_whiteC.webp';
 
 const Projects = () => {
   const [selectedProj, setSelectedProj] = useState(null);
