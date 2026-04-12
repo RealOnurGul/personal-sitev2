@@ -13,7 +13,7 @@ import './Home.css';
 // Images
 import profilePic from '../assets/profile.png';
 import educationImage from '../assets/education.webp';
-import technicalImage from '../assets/technical.png';
+import technicalImage from '../assets/technical.webp';
 import extracurricularsImage from '../assets/extracurriculars.webp';
 import onurBackstroke from '../assets/Onur_BACKSTROKE.jpeg';
 
